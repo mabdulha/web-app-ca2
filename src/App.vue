@@ -38,5 +38,8 @@ export default {
   text-align: center;
   color: #3a3333;
 }
-@import'~bootstrap/dist/css/bootstrap.css'
+
+.VueTables__sortable {
+  cursor: -webkit-grab; cursor: grab;
+}
 </style>

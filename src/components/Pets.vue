@@ -3,6 +3,7 @@
     <h3 class="vue-title"><i class="fa fa-list" style="padding: 3px"></i>{{messagetitle}}</h3>
     <div id="app1">
    <v-client-table :columns="columns" :data="pets" :options="options">
+     <a slot="view" slot-scope="props" class="fa fa-eye" @click="upview(props.row._id)"></a>
    </v-client-table>
  </div>
   </div>
@@ -21,8 +22,10 @@ export default {
       messagetitle: 'Pets List',
       pets: [],
       errors: [],
-      columns: ['_id', 'name', 'type', 'species', 'gender'],
+      props: ['_id'],
+      columns: ['_id', 'name', 'type', 'species', 'gender', 'views', 'view'],
       options: {
+        sortable: ['views'],
         headings: {
           _id: 'ID',
           name: 'Name',
@@ -43,6 +46,17 @@ export default {
           // JSON responses are automatically parsed.
           this.pets = response.data
           console.log(this.pets)
+        })
+        .catch(error => {
+          this.errors.push(error)
+          console.log(error)
+        })
+    },
+    upview: function (id) {
+      PetService.upviewPet(id)
+        .then(response => {
+          this.loadPets()
+          console.log(response)
         })
         .catch(error => {
           this.errors.push(error)
