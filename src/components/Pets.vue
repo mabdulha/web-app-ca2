@@ -21,20 +21,14 @@ export default {
       messagetitle: 'Pets List',
       pets: [],
       errors: [],
-      columns: ['_id', 'name', 'type', 'species', 'gender' /*, 'colour', 'size', 'age', 'lastSeenAddress', 'views', 'status' */],
+      columns: ['_id', 'name', 'type', 'species', 'gender'],
       options: {
         headings: {
           _id: 'ID',
           name: 'Name',
           type: 'Type',
           species: 'Species',
-          gender: 'Gender' /*,
-          colour: 'Colour',
-          size: 'Size',
-          age: 'Age',
-          lastSeenAddress: 'Last Seen Address',
-          views: 'Views',
-          missing: 'Status'*/
+          gender: 'Gender'
         }
       }
     }

@@ -38,4 +38,5 @@ export default {
   text-align: center;
   color: #3a3333;
 }
+@import'~bootstrap/dist/css/bootstrap.css'
 </style>
