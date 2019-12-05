@@ -10,5 +10,8 @@ export default {
   },
   upviewPet (id) {
     return Api().put(`/pets/${id}/view`)
+  },
+  deletePet (id) {
+    return Api().delete(`/pets/${id}`)
   }
 }
