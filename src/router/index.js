@@ -5,6 +5,7 @@ import Pets from '@/components/Pets'
 import About from '@/components/About'
 import AddPet from '@/components/AddPet'
 import Contact from '@/components/Contact'
+import Edit from '@/components/Edit'
 
 Vue.use(Router)
 
@@ -33,7 +34,14 @@ export default new Router({
     {
       path: '/add',
       name: 'Add Pet',
-      component: AddPet
+      component: AddPet,
+      props: true
+    },
+    {
+      path: '/edit',
+      name: 'Edit',
+      component: Edit,
+      props: true
     }
   ]
 })
