@@ -59,6 +59,7 @@ export default {
       PetService.upviewPet(id)
         .then(response => {
           this.loadPets()
+          console.log(id)
           console.log(response)
         })
         .catch(error => {

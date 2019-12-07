@@ -75,6 +75,7 @@ export default {
         this.owner = owner
         console.log('Submitting in Register : ' + JSON.stringify(this.owner, null, 5))
         this.submitOwner(this.owner)
+        this.loginOwner(this.owner)
       }, 500)
     },
     submitOwner: function (owner) {
@@ -85,10 +86,26 @@ export default {
           // JSON responses are automatically parsed.
           console.log(response)
           console.log(owner)
-          this.$router.push('/login')
+          // this.$router.push('/login')
         })
         .catch(err => {
           this.errors.push(err)
+          console.log(err)
+        })
+    },
+    loginOwner: function (owner) {
+      const credentials = {
+        email: owner.email,
+        password: owner.password
+      }
+      AuthService.login(credentials)
+        .then(response => {
+          // JSON responses are automatically parsed.
+          console.log(response)
+          localStorage.setItem('token', response.data.token)
+          this.$router.push('/')
+        })
+        .catch(err => {
           console.log(err)
         })
     }

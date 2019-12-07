@@ -1,6 +1,6 @@
 <template>
   <div id="app1" class="hero">
-    <h3 class="vue-title"><i class="fa fa-plus" style="padding: 3px"></i>{{messagetitle}}</h3>
+    <h3 class="vue-title"><i class="fa fa-plus" style="padding: 20px!important"></i>{{messagetitle}}</h3>
     <div class="container mt-3 mt-sm-5">
       <div class="row justify-content-center">
         <div class="col-md-6">
@@ -21,6 +21,11 @@ export default {
     return {
       pet: {name: '', type: '', species: '', gender: '', colour: '', size: 0.0, age: '', lastSeenAddress: ''},
       messagetitle: 'Add Pet'
+    }
+  },
+  created () {
+    if (localStorage.getItem('token') === null) {
+      this.$router.push('/login')
     }
   },
   components: {

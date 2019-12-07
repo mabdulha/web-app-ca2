@@ -1,13 +1,11 @@
 <template>
   <div class="hero">
+    <h1 class="welcome-user"> Welcome {{ firstname }} {{ lastname }} </h1>
       <h1 class="vue-title">Need some help to find your pet?</h1>
-
         <table align="center">
           <tr>
             <td>
-              <p class="lead"><b><i>Time for a Result !!</i></b>
-              <p>Out with Boring Prumt - Giving has never been so easy.</p>
-              <p>Just click <a href ="/pet">here</a> to go to</p>
+              <p>Just click <a href ="/add">here</a> to go to</p>
               <p>the Pet page and report your Pet</p>
             </td>
             <td>
@@ -21,6 +19,21 @@
     </div>
 </template>
 
+<script>
+import jtwDecode from 'jwt-decode'
+
+export default {
+  name: 'Home',
+  data () {
+    const token = localStorage.getItem('token')
+    const decoded = jtwDecode(token)
+    return {
+      firstname: decoded.firstname,
+      lastname: decoded.lastname
+    }
+  }
+}
+</script>
 <style>
   .hero {
     height: 100vh;
@@ -38,6 +51,10 @@
     margin: 0 auto;
   }
   .vue-title {
+    font-size: 70pt;
+    margin-bottom: 10px;
+  }
+  .welcome-user {
     font-size: 70pt;
     margin-bottom: 10px;
   }

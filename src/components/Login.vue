@@ -57,22 +57,19 @@ export default {
           password: this.password
         }
         this.credentials = credentials
-        console.log('Submitting in Login : ' + JSON.stringify(this.credentials, null, 5))
         this.loginOwner(this.credentials)
       }, 500)
     },
     loginOwner: function (credentials) {
       console.log('LoginOwner')
-      console.log('submitting in login ' + credentials)
       AuthService.login(credentials)
         .then(response => {
           // JSON responses are automatically parsed.
           console.log(response)
-          console.log(credentials)
+          localStorage.setItem('token', response.data.token)
           this.$router.push('/')
         })
         .catch(err => {
-          // this.errors.push(err)
           console.log(err)
         })
     }
