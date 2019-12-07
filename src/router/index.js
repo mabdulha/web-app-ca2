@@ -7,6 +7,7 @@ import AddPet from '@/components/AddPet'
 import Contact from '@/components/Contact'
 import Edit from '@/components/Edit'
 import Register from '@/components/Register'
+import Login from '@/components/Login'
 
 Vue.use(Router)
 
@@ -48,6 +49,11 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component: Register
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     }
   ]
 })

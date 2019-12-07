@@ -1,19 +1,10 @@
 <template>
   <div class="hero">
-    <h3 class="vue-title"><i class="fa fa-user" style="padding: 3px"></i>{{messagetitle}}</h3>
-    <div class="container register-form">
+    <h3 class="vue-title"><i class="fa fa-sign-in" style="padding: 3px"></i>{{messagetitle}}</h3>
+    <div class="container login-form">
       <form @submit.prevent="submit">
         <div class="form-content align-center">
           <div class="column">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="First Name*" required="" v-model.trim="firstname" />
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Last Name*" required="" v-model="lastname" />
-            </div>
-            <div class="form-group">
-              <input type="telephone" class="form-control" placeholder="Phone Number*" required="" v-model="phonenum" />
-            </div>
             <div class="form-group">
               <input type="email" class="form-control" placeholder="Email Address*" required="" v-model="email" />
             </div>
@@ -24,10 +15,10 @@
                 <input type="text" class="form-control" placeholder="Confirm Password*" required="" v-model="passwordcheck"/>
             </div> -->
           </div>
-          <button class="btnSubmit" type="submit" :disabled="submitStatus === 'PENDING'">Register</button>
+          <button class="btnSubmit" type="submit" :disabled="submitStatus === 'PENDING'">Login</button>
         </div>
-        <p class="typo__p" v-if="submitStatus === 'OK'">Thanks for Registering!</p>
-        <p class="typo__p" v-if="submitStatus === 'PENDING'">Registering...</p>
+        <p class="typo__p" v-if="submitStatus === 'OK'">Thanks for Loging in!</p>
+        <p class="typo__p" v-if="submitStatus === 'PENDING'">Loging in...</p>
       </form>
     </div>
   </div>
@@ -48,53 +39,45 @@ Vue.use(VueForm, {
 export default {
   data () {
     return {
-      messagetitle: 'Register',
-      firstname: '',
-      lastname: '',
-      phonenum: '',
+      messagetitle: 'Login',
       email: '',
       password: '',
-      owner: {},
       submitStatus: null
     }
   },
   methods: {
     submit () {
-      console.log('submit!')
+      console.log('submit')
       // do your submit logic here
       this.submitStatus = 'PENDING'
       setTimeout(() => {
         this.submitStatus = 'OK'
-        var owner = {
-          firstname: this.firstname,
-          lastname: this.lastname,
-          phonenum: this.phonenum,
+        var credentials = {
           email: this.email,
           password: this.password
         }
-        this.owner = owner
-        console.log('Submitting in Register : ' + JSON.stringify(this.owner, null, 5))
-        this.submitOwner(this.owner)
+        this.credentials = credentials
+        console.log('Submitting in Login : ' + JSON.stringify(this.credentials, null, 5))
+        this.loginOwner(this.credentials)
       }, 500)
     },
-    submitOwner: function (owner) {
-      console.log('submitOwner')
-      console.log('submitting in submitOwner : ' + owner)
-      AuthService.register(owner)
+    loginOwner: function (credentials) {
+      console.log('LoginOwner')
+      console.log('submitting in login ' + credentials)
+      AuthService.login(credentials)
         .then(response => {
           // JSON responses are automatically parsed.
           console.log(response)
-          console.log(owner)
-          this.$router.push('/login')
+          console.log(credentials)
+          this.$router.push('/')
         })
         .catch(err => {
-          this.errors.push(err)
+          // this.errors.push(err)
           console.log(err)
         })
     }
   }
 }
-
 </script>
 
 <style scoped>
