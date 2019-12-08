@@ -19,7 +19,7 @@ import PetForm from '@/components/PetForm'
 export default {
   data () {
     return {
-      pet: {name: '', type: '', species: '', gender: '', colour: '', size: 0.0, age: '', lastSeenAddress: ''},
+      pet: {name: '', type: '', species: '', gender: '', colour: '', size: '', age: '', lastSeenAddress: ''},
       messagetitle: 'Add Pet'
     }
   },

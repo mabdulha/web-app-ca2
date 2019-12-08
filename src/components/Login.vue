@@ -28,6 +28,7 @@
 import AuthService from '@/services/authservice'
 import Vue from 'vue'
 import VueForm from 'vueform'
+import EventBus from '@/components/EventBus'
 
 Vue.use(VueForm, {
   inputClasses: {
@@ -72,6 +73,11 @@ export default {
         .catch(err => {
           console.log(err)
         })
+      this.emitMethod()
+    },
+    emitMethod () {
+      console.log('Updating emit')
+      EventBus.$emit('logged-in', 'loggedin')
     }
   }
 }

@@ -20,13 +20,13 @@
 </template>
 
 <script>
-import jtwDecode from 'jwt-decode'
+import jwtDecode from 'jwt-decode'
 
 export default {
   name: 'Home',
   data () {
     const token = localStorage.getItem('token')
-    const decoded = jtwDecode(token)
+    const decoded = jwtDecode(token)
     return {
       firstname: decoded.firstname,
       lastname: decoded.lastname
