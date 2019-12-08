@@ -2,12 +2,12 @@
   <div class="hero">
     <h3 class="vue-title"><i class="fa fa-list" style="padding: 3px"></i>{{messagetitle}}</h3>
     <div id="app1">
-   <v-client-table :columns="columns" :data="pets" :options="options">
-     <a slot="view" slot-scope="props" class="fa fa-eye fa-2x" @click="upview(props.row._id)"></a>
-      <a slot="remove" slot-scope="props" class="fa fa-trash-o fa-2x" @click="deletePetRow(props.row._id)"></a>
-      <a slot="edit" slot-scope="props" class="fa fa-edit fa-2x" @click="editPet(props.row._id)"></a>
-   </v-client-table>
- </div>
+      <v-client-table :columns="columns" :data="pets" :options="options">
+        <a slot="view" slot-scope="props" class="fa fa-eye fa-2x" @click="upview(props.row._id)"></a>
+        <a slot="remove" slot-scope="props" class="fa fa-trash-o fa-2x" @click="deletePetRow(props.row._id)"></a>
+        <a slot="edit" slot-scope="props" class="fa fa-edit fa-2x" @click="editPet(props.row._id)"></a>
+      </v-client-table>
+    </div>
   </div>
 </template>
 
@@ -71,16 +71,6 @@ export default {
       this.$router.params = id
       this.$router.push('edit')
     },
-    /* deletePet: function (id) {
-      PetService.deletePet(id)
-        .then(response => {
-          this.loadPets()
-        })
-        .catch(error => {
-          this.errors.push(error)
-          console.log(error)
-        })
-    } */
     deletePetRow: function (id) {
       this.$swal({
         title: 'Are you totaly sure?',

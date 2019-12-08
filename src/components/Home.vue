@@ -5,11 +5,11 @@
         <table align="center">
           <tr>
             <td>
-              <p>Just click <a href ="/add">here</a> to go to</p>
-              <p>the Pet page and report your Pet</p>
+              <p>Just click <a href ="/login">here</a> to go to</p>
+              <p>the login page and report your Pet</p>
             </td>
             <td>
-              <img src="../assets/missingpet.gif" alt="description here" />
+              <img src="../assets/missingpet.gif" alt="Mising Pet" />
             </td>
           </tr>
         </table>

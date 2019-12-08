@@ -43,7 +43,7 @@ export default {
     logout () {
       localStorage.removeItem('token')
       this.$router.push('/')
-      // This is to refresh the nav so that the user doesnt need to refrresh the page
+      // This is to refresh the nav so that the user doesnt need to refresh the page
       window.location.reload()
     }
   },
@@ -64,7 +64,7 @@ export default {
   color: #3a3333;
 }
 
-.VueTables__sortable {
-  cursor: -webkit-grab; cursor: grab;
+.VueTables a {
+  cursor: pointer;
 }
 </style>

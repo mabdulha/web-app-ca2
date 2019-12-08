@@ -69,11 +69,11 @@ export default {
           console.log(response)
           localStorage.setItem('token', response.data.token)
           this.$router.push('/')
+          this.emitMethod()
         })
         .catch(err => {
           console.log(err)
         })
-      this.emitMethod()
     },
     emitMethod () {
       console.log('Updating emit')

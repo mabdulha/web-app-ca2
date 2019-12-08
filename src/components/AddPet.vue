@@ -1,14 +1,8 @@
 <template>
   <div id="app1" class="hero">
     <h3 class="vue-title"><i class="fa fa-plus" style="padding: 20px!important"></i>{{messagetitle}}</h3>
-    <div class="container mt-3 mt-sm-5">
-      <div class="row justify-content-center">
-        <div class="col-md-6">
           <pet-form :pet="pet" petBtnTitle="Add Pet"
                          @pet-is-created-updated="submitPet"></pet-form>
-        </div><!-- /col -->
-      </div><!-- /row -->
-    </div><!-- /container -->
   </div>
 </template>
 
@@ -53,6 +47,7 @@ export default {
     width: 95%;
     margin: 0 auto;
   }
+
   .vue-title {
     margin-top: 30px;
     text-align: center;

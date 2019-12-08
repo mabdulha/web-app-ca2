@@ -1,15 +1,9 @@
 <template>
   <div id="app1" class="hero">
     <h3 class="vue-title"><i class="fa fa-edit" style="padding: 3px"></i>{{messagetitle}}</h3>
-    <div class="container mt-3 mt-sm-5">
-      <div class="row justify-content-center">
-        <div class="col-md-6">
           <template v-if="childDataLoaded">
             <pet-form :pet="pet" petBtnTitle="Update Pet" @pet-is-created-updated="updatePet"></pet-form>
           </template>
-        </div><!-- /col -->
-      </div><!-- /row -->
-    </div><!-- /container -->
   </div>
 </template>
 
@@ -30,6 +24,9 @@ export default {
     'pet-form': PetForm
   },
   created () {
+    if (localStorage.getItem('token') == null) {
+      this.$router.push('/login')
+    }
     this.getPet()
   },
   methods: {
