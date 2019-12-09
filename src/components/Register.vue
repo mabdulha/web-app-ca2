@@ -37,6 +37,7 @@
 import AuthService from '@/services/authservice'
 import Vue from 'vue'
 import VueForm from 'vueform'
+import EventBus from '@/components/EventBus'
 
 Vue.use(VueForm, {
   inputClasses: {
@@ -75,7 +76,6 @@ export default {
         this.owner = owner
         console.log('Submitting in Register : ' + JSON.stringify(this.owner, null, 5))
         this.submitOwner(this.owner)
-        this.loginOwner(this.owner)
       }, 500)
     },
     submitOwner: function (owner) {
@@ -87,6 +87,7 @@ export default {
           console.log(response)
           console.log(owner)
           // this.$router.push('/login')
+          this.loginOwner(this.owner)
         })
         .catch(err => {
           this.errors.push(err)
@@ -104,10 +105,15 @@ export default {
           console.log(response)
           localStorage.setItem('token', response.data.token)
           this.$router.push('/')
+          this.emitMethod()
         })
         .catch(err => {
           console.log(err)
         })
+    },
+    emitMethod () {
+      console.log('Updating emit')
+      EventBus.$emit('logged-in', 'loggedin')
     }
   }
 }

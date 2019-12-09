@@ -4,9 +4,8 @@
     <div id="app1">
       <v-client-table :columns="columns" :data="pets" :options="options">
         <a slot="view" slot-scope="props" class="fa fa-eye fa-2x" @click="upview(props.row._id)"></a>
-        <a @click="upview(props.row._id)" slot="child_row" slot-scope="props">
-          <div class="pet-last-seen"> Last Seen Address: {{ props.row.lastSeenAddress }} </div>
-        </a>
+        <a slot="remove" slot-scope="props" class="fa fa-trash-o fa-2x" @click="deletePetRow(props.row._id)"></a>
+        <a slot="edit" slot-scope="props" class="fa fa-edit fa-2x" @click="editPet(props.row._id)"></a>
       </v-client-table>
     </div>
   </div>
@@ -19,14 +18,14 @@ import VueTables from 'vue-tables-2'
 
 Vue.use(VueTables.ClientTable, {compileTemplates: true, filterByColumn: true})
 export default {
-  name: 'Pets',
+  name: 'ManagePets',
   data () {
     return {
-      messagetitle: 'Pets List',
+      messagetitle: 'Pets Manage',
       pets: [],
       errors: [],
       props: ['_id'],
-      columns: ['name', 'type', 'species', 'gender', 'colour', 'views', 'view'],
+      columns: ['name', 'type', 'species', 'gender', 'lastSeenAddress', 'views', 'view', 'remove', 'edit'],
       options: {
         sortable: ['views'],
         headings: {
@@ -35,7 +34,7 @@ export default {
           type: 'Type',
           species: 'Species',
           gender: 'Gender',
-          colour: 'Colour'
+          lastSeenAddress: 'Last Seen'
         }
       }
     }
@@ -67,6 +66,42 @@ export default {
           this.errors.push(error)
           console.log(error)
         })
+    },
+    editPet: function (id) {
+      this.$router.params = id
+      this.$router.push('edit')
+    },
+    deletePetRow: function (id) {
+      this.$swal({
+        title: 'Are you totaly sure?',
+        text: 'You can\'t Undo this action',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'OK Delete it',
+        cancelButtonText: 'Cancel',
+        showCloseButton: true,
+        showLoaderOnConfirm: true
+      }).then((result) => {
+        console.log('SWAL Result : ' + result)
+        if (result === true) {
+          PetService.deletePet(id)
+            .then(response => {
+              // JSON responses are automatically parsed.
+              this.message = response.data
+              console.log(this.message)
+              this.loadPets()
+              // Vue.nextTick(() => this.$refs.vuetable.refresh())
+              this.$swal('Deleted', 'You successfully deleted this Pet ' + JSON.stringify(response.data, null, 5), 'success')
+            })
+            .catch(error => {
+              this.$swal('ERROR', 'Something went wrong trying to Delete ' + error, 'error')
+              this.errors.push(error)
+              console.log(error)
+            })
+        } else {
+          this.$swal('Cancelled', 'Your Pet could not Delete!', 'info')
+        }
+      })
     }
   }
 }
@@ -83,5 +118,4 @@ export default {
   width: 85%;
   margin: 0 auto;
 }
-
 </style>

@@ -9,8 +9,8 @@
                 <input type="text" class="form-control" placeholder="Pet Name*" required="" v-model.trim="name" />
               </div>
               <div class="form-group">
-                <select class="browser-default custom-select" required="" v-model="type">
-                  <option value="null" selected disabled hidden> Pet Type </option>
+                <select name="type" class="custom-select" required="" v-model="type">
+                  <option value="null" selected disabled> Pet Type </option>
                   <option value="Dog">Dog</option>
                   <option value="Cat">Cat</option>
                   <option value="Bird">Bird</option>
@@ -24,8 +24,8 @@
                 <input type="text" class="form-control" placeholder="Pet Species*" required="" v-model="species" />
               </div>
               <div class="form-group">
-                <select class="browser-default custom-select" required="" v-model="gender">
-                  <option value="null" selected disabled hidden>Choose Gender</option>
+                <select class="custom-select" required="" v-model="gender">
+                  <option value="null" selected disabled>Choose Gender</option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
                 </select>
@@ -40,8 +40,8 @@
                 </div>
               </div>
               <div class="form-group fix">
-                <select class="browser-default custom-select" required="" v-model="age">
-                  <option selected>Age of Pet</option>
+                <select class="custom-select" v-model="age">
+                  <option value="null" selected disabled>Age of Pet</option>
                   <option value="underOne">Less than 1 year</option>
                   <option value="underTwo">Less than 2 years</option>
                   <option value="underThree">Less than 3 years</option>
@@ -158,6 +158,6 @@ export default {
   }
 
   .fix {
-    margin-top: 1.5em;
+    margin-top: 1em;
   }
 </style>

@@ -8,6 +8,7 @@ import Contact from '@/components/Contact'
 import Edit from '@/components/Edit'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
+import ManagePets from '@/components/ManagePets'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/pets',
       name: 'Pets',
       component: Pets
+    },
+    {
+      path: '/managepets',
+      name: 'ManagePets',
+      component: ManagePets
     },
     {
       path: '/about',
