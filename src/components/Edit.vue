@@ -24,9 +24,6 @@ export default {
     'pet-form': PetForm
   },
   created () {
-    if (localStorage.getItem('token') == null) {
-      this.$router.push('/login')
-    }
     this.getPet()
   },
   methods: {
@@ -46,6 +43,7 @@ export default {
       PetService.putPet(this.$router.params, pet)
         .then(response => {
           console.log(response)
+          this.$router.push('/managepets')
         })
         .catch(error => {
           this.error.push(error)

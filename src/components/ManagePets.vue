@@ -7,6 +7,7 @@
         <a slot="remove" slot-scope="props" class="fa fa-trash-o fa-2x" @click="deletePetRow(props.row._id)"></a>
         <a slot="edit" slot-scope="props" class="fa fa-edit fa-2x" @click="editPet(props.row._id)"></a>
         <a @click="upview(props.row._id)" slot="child_row" slot-scope="props">
+          <div class="pet-age"> Pet Age: {{ props.row.age }} </div>
           <div class="pet-last-seen"> Last Seen Address: {{ props.row.lastSeenAddress }} </div>
         </a>
       </v-client-table>
@@ -38,15 +39,17 @@ export default {
           species: 'Species',
           gender: 'Gender'
         }
-      }
+      },
+      ownerID: this.$store.state.owner._id
     }
   },
   created () {
-    this.loadPets()
+    this.loadPets(this.ownerID)
   },
   methods: {
-    loadPets: function () {
-      PetService.fetchPets()
+    loadPets: function (ownerID) {
+      console.log(ownerID)
+      PetService.fetchPetsByOwner(ownerID)
         .then(response => {
           // JSON responses are automatically parsed.
           this.pets = response.data

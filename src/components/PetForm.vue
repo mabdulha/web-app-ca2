@@ -20,7 +20,7 @@
                 </select>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Pet Species*" required="" v-model="species" />
+                <input type="text" class="form-control" placeholder="Pet Species/Breed*" required="" v-model="species" />
               </div>
               <div class="form-group">
                 <select class="custom-select" required="" v-model="gender">
@@ -41,12 +41,12 @@
               <div class="form-group fix">
                 <select class="custom-select" v-model="age">
                   <option value="null" selected disabled>Age of Pet</option>
-                  <option value="underOne">Less than 1 year</option>
-                  <option value="underTwo">Less than 2 years</option>
-                  <option value="underThree">Less than 3 years</option>
-                  <option value="underFour">Less than 4 years</option>
-                  <option value="underFive">Less than 5 years</option>
-                  <option value="overFive">Older than 5 years</option>
+                  <option value="Less than 1 year">Less than 1 year</option>
+                  <option value="Less than 2 years">Less than 2 years</option>
+                  <option value="Less than 3 years">Less than 3 years</option>
+                  <option value="Less than 4 years">Less than 4 years</option>
+                  <option value="Less than 5 years">Less than 5 years</option>
+                  <option value="Older than 5 years">Older than 5 years</option>
                 </select>
               </div>
               <div class="form-group">

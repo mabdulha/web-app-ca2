@@ -5,6 +5,7 @@ import createPersistedState from 'vuex-persistedstate'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
+  // Using plugin to persist the login states after refresh
   plugins: [createPersistedState()],
   state: {
     token: null,

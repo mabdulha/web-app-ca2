@@ -26,7 +26,7 @@ export default {
       pets: [],
       errors: [],
       props: ['_id'],
-      columns: ['name', 'type', 'species', 'gender', 'colour', 'views', 'view'],
+      columns: ['name', 'type', 'species', 'gender', 'age', 'views', 'view'],
       options: {
         sortable: ['views'],
         headings: {
@@ -35,7 +35,7 @@ export default {
           type: 'Type',
           species: 'Species',
           gender: 'Gender',
-          colour: 'Colour'
+          age: 'Age'
         }
       }
     }
