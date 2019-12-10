@@ -22,20 +22,23 @@
       </b-collapse>
     </b-navbar>
     <router-view/>
+    <sitefooter></sitefooter>
   </div>
 </template>
 
 <script>
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   methods: {
     logout () {
-      localStorage.removeItem('token')
+      this.$store.dispatch('setToken', null)
       this.$router.push('/')
-      // This is to refresh the nav so that the user doesnt need to refresh the page
-      window.location.reload()
     }
+  },
+  components: {
+    'sitefooter': Footer
   }
 }
 </script>

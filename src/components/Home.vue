@@ -54,14 +54,14 @@ export default {
   }
   .hero .lead {
     font-weight: 200;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .vue-title {
-    font-size: 70pt;
+    font-size: 60pt;
     margin-bottom: 10px;
   }
   .welcome-user {
-    font-size: 70pt;
+    font-size: 60pt;
     margin-bottom: 10px;
   }
 </style>
