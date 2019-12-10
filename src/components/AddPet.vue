@@ -13,13 +13,18 @@ import PetForm from '@/components/PetForm'
 export default {
   data () {
     return {
-      pet: {name: '', type: '', species: '', gender: '', colour: '', size: '', age: '', lastSeenAddress: ''},
-      messagetitle: 'Add Pet'
-    }
-  },
-  created () {
-    if (localStorage.getItem('token') === null) {
-      this.$router.push('/login')
+      messagetitle: 'Add Pet',
+      pet: {
+        name: '',
+        type: '',
+        species: '',
+        gender: '',
+        colour: '',
+        size: '',
+        age: '',
+        lastSeenAddress: '',
+        ownerID: ''
+      }
     }
   },
   components: {
@@ -27,6 +32,7 @@ export default {
   },
   methods: {
     submitPet: function (pet) {
+      console.log(this.$store.state.owner._id)
       PetService.postPets(pet)
         .then(response => {
           // JSON responses are automatically parsed.

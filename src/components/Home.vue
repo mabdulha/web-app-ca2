@@ -4,8 +4,12 @@
       <h1 class="vue-title">Need some help to find your pet?</h1>
         <table align="center">
           <tr>
-            <td>
-              <p>Just click <a href ="/login">here</a> to go to</p>
+            <td v-if="$store.state.isOwnerLoggedIn">
+              <p>Just click <router-link to="/add">here</router-link> to go to</p>
+              <p>the pet report page and report your Pet</p>
+            </td>
+            <td v-else>
+              <p>Just click <router-link  to="/login">here</router-link> to go to</p>
               <p>the login page and report your Pet</p>
             </td>
             <td>
@@ -20,16 +24,22 @@
 </template>
 
 <script>
-import jwtDecode from 'jwt-decode'
 
 export default {
   name: 'Home',
   data () {
-    const token = localStorage.getItem('token')
-    const decoded = jwtDecode(token)
     return {
-      firstname: decoded.firstname,
-      lastname: decoded.lastname
+      firstname: '',
+      lastname: ''
+    }
+  },
+  mounted () {
+    this.loadName()
+  },
+  methods: {
+    loadName () {
+      this.firstname = this.$store.state.owner.firstname
+      this.lastname = this.$store.state.owner.lastname
     }
   }
 }
@@ -45,10 +55,6 @@ export default {
   .hero .lead {
     font-weight: 200;
     font-size: 2.5rem;
-  }
-  #app1 {
-    width: 60%;
-    margin: 0 auto;
   }
   .vue-title {
     font-size: 70pt;

@@ -11,9 +11,6 @@
             <div class="form-group">
               <input type="password" class="form-control" placeholder="Password*" required="" v-model="password" />
             </div>
-            <!-- <div class="form-group">
-                <input type="text" class="form-control" placeholder="Confirm Password*" required="" v-model="passwordcheck"/>
-            </div> -->
           </div>
           <button class="btnSubmit" type="submit" :disabled="submitStatus === 'PENDING'">Login</button>
         </div>
@@ -28,7 +25,6 @@
 import AuthService from '@/services/authservice'
 import Vue from 'vue'
 import VueForm from 'vueform'
-import EventBus from '@/components/EventBus'
 
 Vue.use(VueForm, {
   inputClasses: {
@@ -67,17 +63,14 @@ export default {
         .then(response => {
           // JSON responses are automatically parsed.
           console.log(response)
-          localStorage.setItem('token', response.data.token)
+          this.$store.dispatch('setToken', response.data.token)
+          console.log(response.data.data)
+          this.$store.dispatch('setOwner', response.data.owner)
           this.$router.push('/')
-          this.emitMethod()
         })
         .catch(err => {
           console.log(err)
         })
-    },
-    emitMethod () {
-      console.log('Updating emit')
-      EventBus.$emit('logged-in', 'loggedin')
     }
   }
 }

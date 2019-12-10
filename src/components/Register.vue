@@ -37,7 +37,6 @@
 import AuthService from '@/services/authservice'
 import Vue from 'vue'
 import VueForm from 'vueform'
-import EventBus from '@/components/EventBus'
 
 Vue.use(VueForm, {
   inputClasses: {
@@ -103,17 +102,14 @@ export default {
         .then(response => {
           // JSON responses are automatically parsed.
           console.log(response)
-          localStorage.setItem('token', response.data.token)
+          // localStorage.setItem('token', response.data.token)
+          this.$store.dispatch('setToken', response.data.token)
+          this.$store.dispatch('setOwner', response.data.owner)
           this.$router.push('/')
-          this.emitMethod()
         })
         .catch(err => {
           console.log(err)
         })
-    },
-    emitMethod () {
-      console.log('Updating emit')
-      EventBus.$emit('logged-in', 'loggedin')
     }
   }
 }

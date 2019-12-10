@@ -95,6 +95,7 @@ export default {
       size: this.pet.size,
       age: this.pet.age,
       lastSeenAddress: this.pet.lastSeenAddress,
+      ownerID: this.$store.state.owner._id,
       views: 0,
       missing: true,
       submitStatus: null
@@ -114,6 +115,7 @@ export default {
           colour: this.colour,
           size: this.size,
           age: this.age,
+          ownerID: this.$store.state.owner._id,
           lastSeenAddress: this.lastSeenAddress
         }
         this.pet = pet
