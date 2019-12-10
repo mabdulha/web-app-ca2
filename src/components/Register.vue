@@ -20,11 +20,16 @@
             <div class="form-group">
               <input type="password" class="form-control" placeholder="Password*" required="" v-model="password" />
             </div>
+            <div class="form-group">
+              <input type="password" class="form-control" placeholder="Confirm Password*" required=""
+                v-model="confirmpassword" />
+            </div>
           </div>
           <button class="btnSubmit" type="submit" :disabled="submitStatus === 'PENDING'">Register</button>
+          <p class="typo__p" v-if="submitStatus === 'ERROR'">Please Check if the passwords match</p>
+          <p class="typo__p" v-if="submitStatus === 'OK'">Thanks for Registering!</p>
+          <p class="typo__p" v-if="submitStatus === 'PENDING'">Registering...</p>
         </div>
-        <p class="typo__p" v-if="submitStatus === 'OK'">Thanks for Registering!</p>
-        <p class="typo__p" v-if="submitStatus === 'PENDING'">Registering...</p>
       </form>
     </div>
   </div>
@@ -51,6 +56,7 @@ export default {
       phonenum: '',
       email: '',
       password: '',
+      confirmpassword: '',
       owner: {},
       submitStatus: null
     }
@@ -61,17 +67,27 @@ export default {
       // do your submit logic here
       this.submitStatus = 'PENDING'
       setTimeout(() => {
-        this.submitStatus = 'OK'
-        var owner = {
-          firstname: this.firstname,
-          lastname: this.lastname,
-          phonenum: this.phonenum,
-          email: this.email,
-          password: this.password
+        if (this.password === this.confirmpassword) {
+          this.submitStatus = 'OK'
+          var owner = {
+            firstname: this.firstname,
+            lastname: this.lastname,
+            phonenum: this.phonenum,
+            email: this.email,
+            password: this.password
+          }
+          this.owner = owner
+          console.log('Submitting in Register : ' + JSON.stringify(this.owner, null, 5))
+          this.submitOwner(this.owner)
+        } else {
+          // alert('Please ensure passwords match')
+          this.submitStatus = 'ERROR'
+          this.$swal({
+            title: 'Please Ensure the passwords both match',
+            type: 'warning',
+            showLoaderOnConfirm: true
+          })
         }
-        this.owner = owner
-        console.log('Submitting in Register : ' + JSON.stringify(this.owner, null, 5))
-        this.submitOwner(this.owner)
       }, 500)
     },
     submitOwner: function (owner) {
@@ -136,6 +152,7 @@ export default {
     border-radius: 1.5rem;
     padding: 1%;
     width: 20%;
+    margin-bottom: 10px;
     cursor: pointer;
     background: #0062cc;
     color: #fff;

@@ -3,7 +3,7 @@
     <h3 class="vue-title"><i style="padding: 3px"></i>{{messagetitle}}</h3>
     <div id="app1">
       <v-client-table :columns="columns" :data="pets" :options="options">
-        <a slot="view" slot-scope="props" class="fa fa-eye fa-2x" @click="upview(props.row._id)"></a>
+        <a slot="view" slot-scope="props" class="fa fa-eye fa-2x" @click="upview(props.row.ownerID, props.row._id)"></a>
         <a slot="remove" slot-scope="props" class="fa fa-trash-o fa-2x" @click="deletePetRow(props.row._id)"></a>
         <a slot="edit" slot-scope="props" class="fa fa-edit fa-2x" @click="editPet(props.row._id)"></a>
         <a @click="upview(props.row._id)" slot="child_row" slot-scope="props">
@@ -60,10 +60,10 @@ export default {
           console.log(error)
         })
     },
-    upview: function (id) {
+    upview: function (ownerID, id) {
       PetService.upviewPet(id)
         .then(response => {
-          this.loadPets()
+          this.loadPets(ownerID)
           console.log(id)
           console.log(response)
         })
