@@ -1,6 +1,5 @@
 <template>
     <div id="app1" class="hero">
-      <!-- <h3 class="vue-title"><i class="fa fa-comment" style="padding: 3px"></i>{{messagetitle}}</h3> -->
       <div class="container pet-form">
         <form @submit.prevent="submit">
           <div class="form-content align-center">
@@ -70,7 +69,6 @@ import Vue from 'vue'
 import VueForm from 'vueform'
 import Vuelidate from 'vuelidate'
 import VueSweetalert from 'vue-sweetalert'
-// import { required, minLength } from 'vuelidate/lib/validators'
 
 Vue.use(VueForm, {
   inputClasses: {
@@ -95,7 +93,7 @@ export default {
       size: this.pet.size,
       age: this.pet.age,
       lastSeenAddress: this.pet.lastSeenAddress,
-      ownerID: this.$store.state.owner._id,
+      ownerID: this.pet.ownerID,
       views: 0,
       missing: true,
       submitStatus: null
@@ -120,7 +118,6 @@ export default {
         }
         this.pet = pet
         this.$emit('pet-is-created-updated', this.pet)
-        this.$router.push('/pets')
       }, 500)
     }
   }

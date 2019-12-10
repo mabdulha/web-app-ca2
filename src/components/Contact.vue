@@ -1,6 +1,6 @@
 <template>
   <div class="hero">
-    <h3 class="vue-title"><i class="fa fa-comment" style="padding: 3px"></i>{{messagetitle}}</h3>
+    <h3 class="vue-title"><i style="padding: 3px"></i>{{messagetitle}}</h3>
   </div>
 </template>
 

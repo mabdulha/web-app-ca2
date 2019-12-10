@@ -1,6 +1,6 @@
 <template>
   <div id="app1" class="hero">
-    <h3 class="vue-title"><i class="fa fa-edit" style="padding: 3px"></i>{{messagetitle}}</h3>
+    <h3 class="vue-title"><i style="padding: 3px"></i>{{messagetitle}}</h3>
           <template v-if="childDataLoaded">
             <pet-form :pet="pet" petBtnTitle="Update Pet" @pet-is-created-updated="updatePet"></pet-form>
           </template>

@@ -1,6 +1,6 @@
 <template>
   <div id="app1" class="hero">
-    <h3 class="vue-title"><i class="fa fa-plus" style="padding: 20px!important"></i>{{messagetitle}}</h3>
+    <h3 class="vue-title"><i style="padding: 20px!important"></i>{{messagetitle}}</h3>
           <pet-form :pet="pet" petBtnTitle="Add Pet"
                          @pet-is-created-updated="submitPet"></pet-form>
   </div>
@@ -13,7 +13,7 @@ import PetForm from '@/components/PetForm'
 export default {
   data () {
     return {
-      messagetitle: 'Add Pet',
+      messagetitle: 'Report Missing Pet',
       pet: {
         name: '',
         type: '',
@@ -38,6 +38,7 @@ export default {
           // JSON responses are automatically parsed.
           console.log(response)
           console.log(pet)
+          this.$router.push('/pets')
         })
         .catch(error => {
           this.errors.push(error)

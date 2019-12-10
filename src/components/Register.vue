@@ -1,6 +1,6 @@
 <template>
   <div class="hero">
-    <h3 class="vue-title"><i class="fa fa-user" style="padding: 3px"></i>{{messagetitle}}</h3>
+    <h3 class="vue-title"><i style="padding: 3px"></i>{{messagetitle}}</h3>
     <div class="container register-form">
       <form @submit.prevent="submit">
         <div class="form-content align-center">
@@ -20,9 +20,6 @@
             <div class="form-group">
               <input type="password" class="form-control" placeholder="Password*" required="" v-model="password" />
             </div>
-            <!-- <div class="form-group">
-                <input type="text" class="form-control" placeholder="Confirm Password*" required="" v-model="passwordcheck"/>
-            </div> -->
           </div>
           <button class="btnSubmit" type="submit" :disabled="submitStatus === 'PENDING'">Register</button>
         </div>

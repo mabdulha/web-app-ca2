@@ -1,11 +1,14 @@
 <template>
   <div class="hero">
-    <h3 class="vue-title"><i class="fa fa-list" style="padding: 3px"></i>{{messagetitle}}</h3>
+    <h3 class="vue-title"><i style="padding: 3px"></i>{{messagetitle}}</h3>
     <div id="app1">
       <v-client-table :columns="columns" :data="pets" :options="options">
         <a slot="view" slot-scope="props" class="fa fa-eye fa-2x" @click="upview(props.row._id)"></a>
         <a slot="remove" slot-scope="props" class="fa fa-trash-o fa-2x" @click="deletePetRow(props.row._id)"></a>
         <a slot="edit" slot-scope="props" class="fa fa-edit fa-2x" @click="editPet(props.row._id)"></a>
+        <a @click="upview(props.row._id)" slot="child_row" slot-scope="props">
+          <div class="pet-last-seen"> Last Seen Address: {{ props.row.lastSeenAddress }} </div>
+        </a>
       </v-client-table>
     </div>
   </div>
@@ -25,7 +28,7 @@ export default {
       pets: [],
       errors: [],
       props: ['_id'],
-      columns: ['name', 'type', 'species', 'gender', 'lastSeenAddress', 'views', 'view', 'remove', 'edit'],
+      columns: ['name', 'type', 'species', 'gender', 'views', 'view', 'remove', 'edit'],
       options: {
         sortable: ['views'],
         headings: {
@@ -33,8 +36,7 @@ export default {
           name: 'Name',
           type: 'Type',
           species: 'Species',
-          gender: 'Gender',
-          lastSeenAddress: 'Last Seen'
+          gender: 'Gender'
         }
       }
     }

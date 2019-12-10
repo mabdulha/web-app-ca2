@@ -1,6 +1,6 @@
 <template>
   <div class="hero">
-    <h3 class="vue-title"><i class="fa fa-sign-in" style="padding: 3px"></i>{{messagetitle}}</h3>
+    <h3 class="vue-title"><i style="padding: 3px"></i>{{messagetitle}}</h3>
     <div class="container login-form">
       <form @submit.prevent="submit">
         <div class="form-content align-center">
@@ -64,7 +64,6 @@ export default {
           // JSON responses are automatically parsed.
           console.log(response)
           this.$store.dispatch('setToken', response.data.token)
-          console.log(response.data.data)
           this.$store.dispatch('setOwner', response.data.owner)
           this.$router.push('/')
         })
