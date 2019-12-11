@@ -1,3 +1,5 @@
 {
-  "projectId": "iwuasx"
+  "projectId": "iwuasx",
+  "baseUrl": "http://localhost:8080/",
+  "requestTimeout": 8999
 }
