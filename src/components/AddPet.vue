@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import PetService from '@/services/PetService'
+import PetService from '@/services/petservice'
 import PetForm from '@/components/PetForm'
 
 export default {

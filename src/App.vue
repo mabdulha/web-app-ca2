@@ -34,6 +34,8 @@ export default {
   methods: {
     logout () {
       this.$store.dispatch('setToken', null)
+      this.$store.dispatch('setOwner', null)
+      window.location.reload()
       this.$router.push('/')
     }
   },

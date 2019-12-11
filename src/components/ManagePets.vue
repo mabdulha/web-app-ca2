@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import PetService from '@/services/PetService'
+import PetService from '@/services/petservice'
 import Vue from 'vue'
 import VueTables from 'vue-tables-2'
 
@@ -75,7 +75,7 @@ export default {
     },
     editPet: function (id) {
       this.$router.params = id
-      this.$router.push('edit')
+      this.$router.push('/edit')
     },
     deletePetRow: function (id) {
       this.$swal({

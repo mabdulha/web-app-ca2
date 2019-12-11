@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import PetService from '@/services/PetService'
+import PetService from '@/services/petservice'
 import Vue from 'vue'
 import VueTables from 'vue-tables-2'
 
