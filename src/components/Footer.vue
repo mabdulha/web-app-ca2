@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="footer-copyright text-center py-3">
+    <div class="footer text-center py-3">
       Copyright © 2019: Missing Paws.
     </div>
   </footer>
@@ -13,7 +13,7 @@ export default {
 </script>
 
 <style scoped>
-.footer-copyright {
+.footer {
   position: fixed;
   left: 0;
   bottom: 0;

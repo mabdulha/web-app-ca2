@@ -1,7 +1,7 @@
 <template>
   <div class="hero">
     <h1 class="welcome-user"> Welcome {{ firstname }} {{ lastname }} </h1>
-      <h1 class="vue-title">Need some help to find your pet?</h1>
+      <h1 class="vue-title">Did you just lose your pet?</h1>
         <table align="center">
           <tr>
             <td v-if="$store.state.isOwnerLoggedIn">
