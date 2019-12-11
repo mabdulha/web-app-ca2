@@ -28,7 +28,7 @@
           <button class="btnSubmit" type="submit" :disabled="submitStatus === 'PENDING'">Register</button>
           <p class="typo__p" v-if="submitStatus === 'ERROR'">Please Check if the passwords match</p>
           <p class="typo__p" v-if="submitStatus === 'OK'">Thanks for Registering!</p>
-          <p class="typo__p" v-if="submitStatus === 'PENDING'">Registering...</p>
+          <p class="typo__p" v-if="submitStatus === 'PENDING'">Pending...</p>
         </div>
       </form>
     </div>
@@ -98,7 +98,6 @@ export default {
           // JSON responses are automatically parsed.
           console.log(response)
           console.log(owner)
-          // this.$router.push('/login')
           this.loginOwner(this.owner)
         })
         .catch(err => {

@@ -5,11 +5,11 @@
           <div class="form-content align-center">
             <div class="column">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Pet Name*" required="" v-model.trim="name" />
+                <input type="text" class="form-control" placeholder="Pet Name*" required="" v-model.trim="name" min="3"/>
               </div>
               <div class="form-group">
                 <select name="type" class="custom-select" required="" v-model="type">
-                  <option value="null" selected disabled> Pet Type </option>
+                  <option label="Pet Type" disabled/>
                   <option value="Dog">Dog</option>
                   <option value="Cat">Cat</option>
                   <option value="Bird">Bird</option>
@@ -24,13 +24,13 @@
               </div>
               <div class="form-group">
                 <select class="custom-select" required="" v-model="gender">
-                  <option value="null" selected disabled>Choose Gender</option>
+                  <option label="Pet Gender" disabled/>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
                 </select>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Colour*" required="" v-model="colour" />
+                <input type="text" class="form-control" placeholder="Colour*" required="" v-model="colour" min="3"/>
               </div>
               <div class="input-group">
                 <input type="number" class="form-control" placeholder="Size of Pet (Minimum of 1)*" required="" v-model="size" min="1" />
@@ -39,8 +39,8 @@
                 </div>
               </div>
               <div class="form-group fix">
-                <select class="custom-select" v-model="age">
-                  <option value="null" selected disabled>Age of Pet</option>
+                <select class="custom-select" v-model="age" required="">
+                  <option label="Pet Age" disabled/>
                   <option value="Less than 1 year">Less than 1 year</option>
                   <option value="Less than 2 years">Less than 2 years</option>
                   <option value="Less than 3 years">Less than 3 years</option>

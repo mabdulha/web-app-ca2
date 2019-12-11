@@ -40,6 +40,7 @@ export default {
           gender: 'Gender'
         }
       },
+      uniqueKey: '_id',
       ownerID: this.$store.state.owner._id
     }
   },
