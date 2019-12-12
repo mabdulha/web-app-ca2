@@ -17,3 +17,4 @@ selenium-debug.log
 *.sln
 cypress.env.json
 cypress/screenshots
+.env

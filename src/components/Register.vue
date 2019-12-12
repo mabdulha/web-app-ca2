@@ -6,22 +6,22 @@
         <div class="form-content align-center">
           <div class="column">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="First Name*" required="" v-model.trim="firstname" />
+              <input type="text" class="form-control" name="firstname" placeholder="First Name*" required="" v-model.trim="firstname" />
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Last Name*" required="" v-model="lastname" />
+              <input type="text" class="form-control" name="lastname" placeholder="Last Name*" required="" v-model="lastname" />
             </div>
             <div class="form-group">
-              <input type="telephone" class="form-control" placeholder="Phone Number*" required="" v-model="phonenum" />
+              <input type="telephone" class="form-control" name="phonenum" placeholder="Phone Number*" required="" v-model="phonenum" />
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" placeholder="Email Address*" required="" v-model="email" />
+              <input type="email" class="form-control" name="email" placeholder="Email Address*" required="" v-model="email" />
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" placeholder="Password*" required="" v-model="password" />
+              <input type="password" class="form-control" name="password" placeholder="Password*" required="" v-model="password" />
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" placeholder="Confirm Password*" required=""
+              <input type="password" class="form-control" name="passwordconfirm" placeholder="Confirm Password*" required=""
                 v-model="confirmpassword" />
             </div>
           </div>

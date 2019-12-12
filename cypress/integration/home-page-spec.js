@@ -1,7 +1,8 @@
 /* eslint-disable no-undef */
+const apiUrl = 'http://localhost:8080/'
 describe('Home Page', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8080/')
+    cy.visit(apiUrl)
   })
   it('Shows headers on page', () => {
     cy.get('.welcome-user').should('contain', 'Welcome')
