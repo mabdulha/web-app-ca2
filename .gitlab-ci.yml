@@ -59,4 +59,3 @@ continous_delivery:
     - npm run build
     - firebase deploy --token "$FIREBASE_TOKEN"
 when: manual
-    
