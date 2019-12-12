@@ -4,7 +4,6 @@ const apiUrl = 'http://localhost:8080/#/login'
 describe('Login Page', () => {
   const email = 'moz@gmail.com'
   const password = 'secret'
-
   before(() => {
     cy.visit(apiUrl)
   })
