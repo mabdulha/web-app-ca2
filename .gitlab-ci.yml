@@ -11,6 +11,7 @@ stages:
   - build
   - test
   - deploy
+  - production
 
 # Jobs:
 
@@ -45,6 +46,6 @@ deploy_staging:
   before_script:
     - npm install -g surge
   script:
-    cp CNAME dist
-    surge dist
-    echo "Deployed to staging server"
+    - cp CNAME dist
+    - surge dist
+    - echo "Deployed to staging server"
