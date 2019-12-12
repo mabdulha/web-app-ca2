@@ -21,15 +21,15 @@ describe('Login Page', () => {
       .should('include', 'Thanks for Loging in!')
     cy.contains('Welcome Moz Abdulha') */
   })
-  it('Log out a user', () => {
-    cy.get('.navbar-nav')
-      .eq(1)
-      .within(() => {
-        cy.get('.nav-item')
-          .eq(2).click()
-          .should('contain', 'Logout')
-          .click()
-        cy.url().should('contain', '/')
-      })
-  })
+  // it('Log out a user', () => {
+  //   cy.get('.navbar-nav')
+  //     .eq(1)
+  //     .within(() => {
+  //       cy.get('.nav-item')
+  //         .eq(2).click()
+  //         .should('contain', 'Logout')
+  //         .click()
+  //       cy.url().should('contain', '/')
+  //     })
+  // })
 })

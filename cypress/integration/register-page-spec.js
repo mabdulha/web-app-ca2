@@ -6,10 +6,8 @@ const chance = new Chance()
 const clientUrl = 'http://localhost:8080/#/register'
 
 describe('Register Page', () => {
-  const firstname = chance.name()
-  const fname = firstname.split(' ', 1)
-  const lastname = chance.name()
-  const lname = lastname.split(' ', 1)
+  const firstname = 'Tommy'
+  const lastname = 'Shelby'
   const phonenum = chance.phone()
   const email = chance.email()
   const password = 'secretpass'
@@ -28,9 +26,9 @@ describe('Register Page', () => {
   }) */
   it('Register a new user (unsucessfully - passwords do not match)', () => {
     cy.get('input[name=firstname]')
-      .type(fname.toString())
+      .type(firstname)
     cy.get('input[name=lastname]')
-      .type(lname.toString())
+      .type(lastname)
     cy.get('input[name=phonenum]')
       .type(phonenum)
     cy.get('input[name=email]')
@@ -38,7 +36,7 @@ describe('Register Page', () => {
     cy.get('input[name=password]')
       .type(password)
     cy.get('input[name=passwordconfirm]')
-      .type(lname.toString())
+      .type(lastname) // Sending last name so registeration is unsuccessful
     cy.get('button[type=submit]')
       .click()
     cy.get('#swal2-title')
@@ -46,9 +44,9 @@ describe('Register Page', () => {
   })
   it('Register a new user (sucessfully)', () => {
     cy.get('input[name=firstname]')
-      .type(fname.toString())
+      .type(firstname)
     cy.get('input[name=lastname]')
-      .type(lname.toString())
+      .type(lastname)
     cy.get('input[name=phonenum]')
       .type(phonenum)
     cy.get('input[name=email]')
@@ -59,7 +57,7 @@ describe('Register Page', () => {
       .type(password)
     cy.get('button[type=submit]')
       .click()
-    cy.wait(200)
-    cy.contains('Welcome')
+    cy.wait(500)
+    cy.contains('Welcome ' + firstname + ' ' + lastname)
   })
 })
