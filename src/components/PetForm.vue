@@ -5,7 +5,7 @@
           <div class="form-content align-center">
             <div class="column">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Pet Name*" required="" v-model.trim="name" min="3"/>
+                <input type="text" name="name" class="form-control" placeholder="Pet Name*" required="" v-model.trim="name" min="3"/>
               </div>
               <div class="form-group">
                 <select name="type" class="custom-select" required="" v-model="type">
@@ -20,7 +20,7 @@
                 </select>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Pet Species/Breed*" required="" v-model="species" />
+                <input type="text" name="species" class="form-control" placeholder="Pet Species/Breed*" required="" v-model="species" />
               </div>
               <div class="form-group">
                 <select class="custom-select" required="" v-model="gender">
@@ -30,16 +30,16 @@
                 </select>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Colour*" required="" v-model="colour" min="3"/>
+                <input type="text" name="colour" class="form-control" placeholder="Colour*" required="" v-model="colour" min="3"/>
               </div>
               <div class="input-group">
-                <input type="number" class="form-control" placeholder="Size of Pet (Minimum of 1)*" required="" v-model="size" min="1" />
+                <input type="number" name="size" class="form-control" placeholder="Size of Pet (Minimum of 1)*" required="" v-model="size" min="1" />
                 <div class="input-group-append">
                   <span class="input-group-text" id="basic-addon2"> Centimeters </span>
                 </div>
               </div>
               <div class="form-group fix">
-                <select class="custom-select" v-model="age" required="">
+                <select name="age" class="custom-select" v-model="age" required="">
                   <option label="Pet Age" disabled/>
                   <option value="Less than 1 year">Less than 1 year</option>
                   <option value="Less than 2 years">Less than 2 years</option>
@@ -50,7 +50,7 @@
                 </select>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Last Seen Address*" required=""
+                <input type="text" name="lastseenaddress" class="form-control" placeholder="Last Seen Address*" required=""
                   v-model="lastSeenAddress" />
               </div>
             </div>
