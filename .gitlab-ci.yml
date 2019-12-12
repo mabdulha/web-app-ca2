@@ -49,3 +49,13 @@ deploy_staging:
     - cp CNAME dist
     - surge dist
     - echo "Deployed to staging server"
+
+continous_delivery:
+  only:
+    - develop
+  stage: production
+  script:
+    - npm i -g firebase-tools
+    - npm run build
+    - firebase deploy --token "$FIREBASE_TOKEN"
+    
