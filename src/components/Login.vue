@@ -45,6 +45,7 @@ export default {
   methods: {
     submit () {
       console.log('submit')
+      console.log(process.env.VUE_APP_URL)
       // do your submit logic here
       this.submitStatus = 'PENDING'
       setTimeout(() => {

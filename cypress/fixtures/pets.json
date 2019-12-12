@@ -1,0 +1,67 @@
+[{
+    "name": "Nemo",
+    "type": "Fish",
+    "species": "Clown Fish",
+    "gender": "Male",
+    "colour": "Orange and white",
+    "size": "0.2 meters",
+    "age": "2 years",
+    "lastSeenAddress": "High Street, Kilkenny",
+    "ownerID": "5df2046811438a0004f7e7b1"
+  },
+  {
+    "name": "Darky",
+    "type": "Dog",
+    "species": "Poodle",
+    "gender": "Male",
+    "colour": "Black",
+    "size": "2 meters",
+    "age": "5 years",
+    "lastSeenAddress": "Green Street, New Ross",
+    "ownerID": "5df1e1b53ceb690004f74da1"
+  },
+  {
+    "name": "Tweety",
+    "type": "Bird",
+    "species": "Canary",
+    "gender": "Female",
+    "colour": "Yellow",
+    "size": "1 meter",
+    "age": "10 years",
+    "lastSeenAddress": "Patrick Street, Waterford",
+    "ownerID": "5df1e1b53ceb690004f74da1"
+  },
+  {
+    "name": "Misty",
+    "type": "Cat",
+    "species": "Ocelat",
+    "gender": "Female",
+    "colour": "Blue",
+    "size": "1.5 meters",
+    "age": "1 years",
+    "lastSeenAddress": "John Street, Dublin",
+    "ownerID": "5df202c2326e91000496f5d7"
+  },
+  {
+    "name": "Charlie",
+    "type": "Dog",
+    "species": "Pitbull",
+    "gender": "Male",
+    "colour": "Brown",
+    "size": "1.7 meters",
+    "age": "3 years",
+    "lastSeenAddress": "Ormonde Street, Kilkenny",
+    "ownerID": "5df1e1b53ceb690004f74da1"
+  },
+  {
+    "name": "Spot",
+    "type": "Dog",
+    "species": "Greyhound",
+    "gender": "Male",
+    "colour": "Brown and white",
+    "size": "3 meters",
+    "age": "3 years",
+    "lastSeenAddress": "Ormonde Street, Kilkenny",
+    "ownerID": "5df202c2326e91000496f5d7"
+  }
+]
