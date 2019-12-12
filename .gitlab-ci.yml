@@ -10,6 +10,7 @@ stages:
   - install
   - build
   - test
+  - deploy
 
 # Jobs:
 
@@ -35,3 +36,15 @@ test:
     - npm run start:server
   script:
     - npx cypress run  --record --key=$CYPRESS_RECORD_KEY
+
+deploy_staging:
+  only:
+    - develop
+    - master
+  stage: deploy
+  before_script:
+    - npm install -g surge
+  script:
+    cp CNAME dist
+    surge dist
+    echo "Deployed to staging server"
