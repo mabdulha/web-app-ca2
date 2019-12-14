@@ -1,28 +1,46 @@
 /* eslint-disable no-undef */
-// const apiURL = 'https://missing-paws-api-staging.herokuapp.com/pets/'
+const apiUrl = 'https://missing-paws-api-staging.herokuapp.com/pets/'
 
-describe('View Pets page', () => {
-  it('Go to the pets view page', () => {
-    cy.visit('/#/pets')
+describe('Manage Pets page', () => {
+  beforeEach(() => {
+    cy.request(apiUrl)
+      .its('body')
+      .then((pets) => {
+        pets.forEach(element => {
+          cy.request('DELETE', apiUrl + element._id)
+        })
+      })
+    cy.fixture('pets')
+      .then((pets) => {
+        pets.forEach((pet) => {
+          cy.request('POST', apiUrl, pet)
+        })
+      })
+    cy.visit('http://localhost:8080')
+    cy.get('.navbar-nav')
+      .eq(0)
+      .within(() => {
+        cy.get('.nav-item')
+          .eq(1)
+          .should('contain', 'View Pets')
+          .click()
+      })
   })
-  it('Display the title of page', () => {
-    cy.get('.vue-title').should('contain', 'Pets List')
-  })
-  it('Display the pets in the table', () => {
+  it('Allows a pet to be upviewed on row 4', () => {
     cy.get('tbody')
       .find('tr')
-      .should('have.length', 10)
-  })
-  it('View the pet in row 2', () => {
-    /* cy.get('.VueTables__heading')
-      .contains('Views')
-      .click() */
+      .should('have.length', 6) // should load all 6 from all the owners pets
     cy.get('tbody')
       .find('tr')
-      .eq(1)
-      .find('td')
-      .eq(7)
+      .eq(3)
       .find('a')
+      .eq(0)
       .click()
+    cy.get('tbody')
+      .find('tr')
+      .eq(3)
+      .find('td')
+      .eq(6)
+      .should('contain', 1)
   })
 })
