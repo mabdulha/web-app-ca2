@@ -10,11 +10,11 @@
           <b-nav-item to="/pets"><i style="padding: 5px"> View Pets </i></b-nav-item>
           <b-nav-item v-if="$store.state.isOwnerLoggedIn" to="/managepets"><i style="padding: 5px"> Manage Pets </i></b-nav-item>
           <b-nav-item v-if="$store.state.isOwnerLoggedIn" to="/add"><i style="padding: 5px"> Report Missing Pet </i></b-nav-item>
-          <!-- <b-nav-item to="/map"><i style="padding: 5px"> Map </i></b-nav-item> -->
+          <b-nav-item to="/map"><i style="padding: 5px"> Map </i></b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
-          <!-- <b-nav-item to="/about"><i style="padding: 5px"> About Us </i></b-nav-item> -->
-          <!-- <b-nav-item to="/contact"><i style="padding: 5px"> Contact Us </i></b-nav-item> -->
+          <b-nav-item to="/about"><i style="padding: 5px"> About Us </i></b-nav-item>
+          <b-nav-item to="/contact"><i style="padding: 5px"> Contact Us </i></b-nav-item>
           <b-nav-item v-if="!$store.state.isOwnerLoggedIn" to="/login"><i style="padding: 5px"> Login </i></b-nav-item>
           <b-nav-item v-if="!$store.state.isOwnerLoggedIn" to="/register"><i style="padding: 5px"> Register </i></b-nav-item>
           <b-nav-item v-if="$store.state.isOwnerLoggedIn" @click="logout"><i style="padding: 5px"> Logout </i></b-nav-item>
