@@ -31,6 +31,6 @@ describe('Go to report a missing pet page', () => {
       })
     cy.get('tbody')
       .find('tr')
-      .should('have.length', 7) // 6 from fixtures and the additional from the add
+      .should('have.length', 6)
   })
 })

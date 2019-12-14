@@ -29,7 +29,7 @@ describe('View Pets page', () => {
   it('Allows a pet to be upviewed on row 4', () => {
     cy.get('tbody')
       .find('tr')
-      .should('have.length', 7) // should load all 6 from all the owners pets
+      .should('have.length', 6) // should load all 6 from all the owners pets
     cy.get('tbody')
       .find('tr')
       .eq(3)
