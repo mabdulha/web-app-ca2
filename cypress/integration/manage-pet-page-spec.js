@@ -49,6 +49,7 @@ describe('Manage Pets page', () => {
       .should('contain', 1)
   })
   it('Edits a pet', () => {
+    cy.wait(200)
     cy.get('tbody')
       .find('tr')
       .eq(2)
@@ -65,6 +66,7 @@ describe('Manage Pets page', () => {
       .and('contain', 'Black Sea Turtle')
   })
   it('Delete a pet', () => {
+    cy.wait(200)
     cy.get('tbody')
       .find('tr')
       .eq(1)

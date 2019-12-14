@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 const apiUrl = 'https://missing-paws-api-staging.herokuapp.com/pets/'
 
-describe('Manage Pets page', () => {
+describe('View Pets page', () => {
   beforeEach(() => {
     cy.request(apiUrl)
       .its('body')
@@ -29,7 +29,7 @@ describe('Manage Pets page', () => {
   it('Allows a pet to be upviewed on row 4', () => {
     cy.get('tbody')
       .find('tr')
-      .should('have.length', 6) // should load all 6 from all the owners pets
+      .should('have.length', 7) // should load all 6 from all the owners pets
     cy.get('tbody')
       .find('tr')
       .eq(3)
