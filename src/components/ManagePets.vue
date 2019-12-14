@@ -98,6 +98,8 @@ export default {
               this.loadPets()
               // Vue.nextTick(() => this.$refs.vuetable.refresh())
               this.$swal('Deleted', 'You successfully deleted this Pet ' + JSON.stringify(response.data, null, 5), 'success')
+              const petindex = this.pets.findIndex(p => p._id === id)
+              this.pets.splice(petindex, 1)
             })
             .catch(error => {
               this.$swal('ERROR', 'Something went wrong trying to Delete ' + error, 'error')

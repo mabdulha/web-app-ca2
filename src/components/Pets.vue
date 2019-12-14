@@ -29,6 +29,7 @@ export default {
       columns: ['name', 'type', 'species', 'gender', 'age', 'views', 'view'],
       options: {
         sortable: ['views'],
+        perpage: 10,
         headings: {
           _id: 'ID',
           name: 'Name',
@@ -36,7 +37,8 @@ export default {
           species: 'Species',
           gender: 'Gender',
           age: 'Age'
-        }
+        },
+        uniqueKey: '_id'
       }
     }
   },

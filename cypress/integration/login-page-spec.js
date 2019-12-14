@@ -11,24 +11,15 @@ describe('Login Page', () => {
     cy.get('.vue-title').should('contain', 'Login')
   })
   it('Login a user', () => {
-    cy.get('input[type=email]')
-      .type(email)
-    cy.get('input[type=password]')
-      .type(password)
-    cy.get('button[type=submit]').click()
-    /* cy.get('.typo__p')
-      .should('include', 'Thanks for Loging in!')
-    cy.contains('Welcome Moz Abdulha') */
+    cy.login(email, password)
   })
-  // it('Log out a user', () => {
-  //   cy.get('.navbar-nav')
-  //     .eq(1)
-  //     .within(() => {
-  //       cy.get('.nav-item')
-  //         .eq(2).click()
-  //         .should('contain', 'Logout')
-  //         .click()
-  //       cy.url().should('contain', '/')
-  //     })
-  // })
+  it('Contain Logout in the nav item to confirm owner has logged in', () => {
+    cy.get('.navbar-nav')
+      .eq(1)
+      .within(() => {
+        cy.get('.nav-item')
+          .eq(2)
+          .should('contain', 'Logout')
+      })
+  })
 })

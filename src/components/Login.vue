@@ -59,6 +59,7 @@ export default {
       }, 500)
     },
     loginOwner: function (credentials) {
+      console.log(process.env.VUE_APP_APIURL)
       console.log('LoginOwner')
       AuthService.login(credentials)
         .then(response => {
@@ -66,7 +67,7 @@ export default {
           console.log(response)
           this.$store.dispatch('setToken', response.data.token)
           this.$store.dispatch('setOwner', response.data.owner)
-          this.$router.push('/')
+          // this.$router.push('/')
         })
         .catch(err => {
           console.log(err)

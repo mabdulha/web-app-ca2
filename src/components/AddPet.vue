@@ -38,7 +38,7 @@ export default {
           // JSON responses are automatically parsed.
           console.log(response)
           console.log(pet)
-          this.$router.push('/pets')
+          this.$router.push('/managepets')
         })
         .catch(error => {
           this.errors.push(error)

@@ -59,3 +59,12 @@ continous_delivery:
     - npm run build
     - firebase deploy --token "$FIREBASE_TOKEN"
   when: manual
+
+continous_delivery:
+  only:
+    - master
+  stage: production
+  script:
+    - npm i -g firebase-tools
+    - npm run build
+    - firebase deploy --token "$FIREBASE_TOKEN"

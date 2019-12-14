@@ -29,8 +29,8 @@ export default {
   name: 'Home',
   data () {
     return {
-      firstname: '',
-      lastname: ''
+      firstname: ' ',
+      lastname: ' '
     }
   },
   mounted () {

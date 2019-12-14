@@ -5,7 +5,7 @@
     "gender": "Male",
     "colour": "Orange and white",
     "size": "0.2 meters",
-    "age": "2 years",
+    "age": 25,
     "lastSeenAddress": "High Street, Kilkenny",
     "ownerID": "5df2046811438a0004f7e7b1"
   },
@@ -15,7 +15,7 @@
     "species": "Poodle",
     "gender": "Male",
     "colour": "Black",
-    "size": "2 meters",
+    "size": 20,
     "age": "5 years",
     "lastSeenAddress": "Green Street, New Ross",
     "ownerID": "5df1e1b53ceb690004f74da1"
@@ -26,7 +26,7 @@
     "species": "Canary",
     "gender": "Female",
     "colour": "Yellow",
-    "size": "1 meter",
+    "size": 10,
     "age": "10 years",
     "lastSeenAddress": "Patrick Street, Waterford",
     "ownerID": "5df1e1b53ceb690004f74da1"
@@ -37,7 +37,7 @@
     "species": "Ocelat",
     "gender": "Female",
     "colour": "Blue",
-    "size": "1.5 meters",
+    "size": 15,
     "age": "1 years",
     "lastSeenAddress": "John Street, Dublin",
     "ownerID": "5df202c2326e91000496f5d7"
@@ -48,7 +48,7 @@
     "species": "Pitbull",
     "gender": "Male",
     "colour": "Brown",
-    "size": "1.7 meters",
+    "size": 54,
     "age": "3 years",
     "lastSeenAddress": "Ormonde Street, Kilkenny",
     "ownerID": "5df1e1b53ceb690004f74da1"
@@ -59,7 +59,7 @@
     "species": "Greyhound",
     "gender": "Male",
     "colour": "Brown and white",
-    "size": "3 meters",
+    "size": 78,
     "age": "3 years",
     "lastSeenAddress": "Ormonde Street, Kilkenny",
     "ownerID": "5df202c2326e91000496f5d7"

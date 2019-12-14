@@ -26,12 +26,12 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('login', (email, pass) => {
-  cy.visit('http://localhost:8080/login')
+  cy.visit('http://localhost:8080/#login')
   cy.get('input[type=email]')
     .type(email)
   cy.get('input[type=password]')
-    .type(password)
+    .type(pass)
   cy.get('button[type=submit]').click()
   cy.get('.typo__p')
-    .should('include', 'Thanks for Loging in!')
+    .should('contain', 'Thanks for Loging in!')
 })

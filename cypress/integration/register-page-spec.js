@@ -6,8 +6,8 @@ const chance = new Chance()
 const clientUrl = 'http://localhost:8080/#/register'
 
 describe('Register Page', () => {
-  const firstname = 'Tommy'
-  const lastname = 'Shelby'
+  const firstname = chance.first()
+  const lastname = chance.last()
   const phonenum = chance.phone()
   const email = chance.email()
   const password = 'secretpass'
@@ -18,12 +18,6 @@ describe('Register Page', () => {
   it('Shows display the title on page', () => {
     cy.get('.vue-title').should('contain', 'Register')
   })
-  /* it.only('Promps user if there are empty fields', () => {
-    cy.get('button[type=submit]')
-      .click()
-    cy.wait(500)
-    cy.contains('Please fill in this field.')
-  }) */
   it('Register a new user (unsucessfully - passwords do not match)', () => {
     cy.get('input[name=firstname]')
       .type(firstname)
@@ -57,7 +51,6 @@ describe('Register Page', () => {
       .type(password)
     cy.get('button[type=submit]')
       .click()
-    /* cy.wait(500)
-    cy.contains('Welcome ' + firstname + ' ' + lastname) */
+    cy.contains(`Welcome ${firstname} ${lastname}`)
   })
 })

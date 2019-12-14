@@ -23,7 +23,7 @@
                 <input type="text" name="species" class="form-control" placeholder="Pet Species/Breed*" required="" v-model="species" />
               </div>
               <div class="form-group">
-                <select class="custom-select" required="" v-model="gender">
+                <select name="gender" class="custom-select" required="" v-model="gender">
                   <option label="Pet Gender" disabled/>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>

@@ -18,3 +18,4 @@ selenium-debug.log
 cypress.env.json
 cypress/screenshots
 .env
+firebase-debug.log
