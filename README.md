@@ -28,6 +28,14 @@ Name: Mozeeb Abdulha
 
 >>Allows the owners only to edit information about their pets
 
+![][login]
+
+>>Allows users who have already registered login and add their pets
+
+![][register]
+
+>>Allows users to make an account to the app
+
 ## E2E/Cypress testing.
 
 (Optional) State any non-standard features (not covered in the lectures or sample code provided) of the Cypress framework that you utilized.
@@ -40,6 +48,7 @@ https://gitlab.com/mabdulha/missing-paws-api-cicd/-/jobs/376119164/artifacts/bro
 ## GitLab CI.
 
 Made video recordings of the running tests in gitlab-ci.yml
+Deployment to firebase and surge
 
 
 [homepage]: ./img/homepage.png
@@ -47,3 +56,5 @@ Made video recordings of the running tests in gitlab-ci.yml
 [managepets]: ./img/managepets.png
 [reportpet]: ./img/reportpet.png
 [edit]: ./img/edit.png
+[login]: ./img/login.png
+[register]: ./img/register.png
