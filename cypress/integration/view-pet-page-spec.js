@@ -25,12 +25,4 @@ describe('View Pets page', () => {
       .find('a')
       .click()
   })
-  it('Should upview the pets view on row 2', () => {
-    cy.get('tbody')
-      .find('tr')
-      .eq(1)
-      .find('td')
-      .eq(6)
-      .contains('1')
-  })
 })

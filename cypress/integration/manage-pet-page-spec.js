@@ -33,7 +33,7 @@ describe('Login a user', () => {
     cy.get('button')
       .get('.swal2-confirm')
       .click()
-    cy.wait(100)
+    cy.wait(700)
     cy.get('button')
       .get('.swal2-confirm')
       .click()
