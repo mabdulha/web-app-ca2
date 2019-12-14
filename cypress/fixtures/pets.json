@@ -4,10 +4,11 @@
     "species": "Clown Fish",
     "gender": "Male",
     "colour": "Orange and white",
-    "size": "0.2 meters",
-    "age": 25,
+    "size": 5,
+    "age": "Less than 4 years",
     "lastSeenAddress": "High Street, Kilkenny",
-    "ownerID": "5df2046811438a0004f7e7b1"
+    "ownerID": "5df2046811438a0004f7e7b1",
+    "missing": true
   },
   {
     "name": "Darky",
@@ -16,9 +17,10 @@
     "gender": "Male",
     "colour": "Black",
     "size": 20,
-    "age": "5 years",
+    "age": "Less than 5 years",
     "lastSeenAddress": "Green Street, New Ross",
-    "ownerID": "5df1e1b53ceb690004f74da1"
+    "ownerID": "5df1e1b53ceb690004f74da1",
+    "missing": true
   },
   {
     "name": "Tweety",
@@ -27,9 +29,10 @@
     "gender": "Female",
     "colour": "Yellow",
     "size": 10,
-    "age": "10 years",
+    "age": "Less than 5 years",
     "lastSeenAddress": "Patrick Street, Waterford",
-    "ownerID": "5df1e1b53ceb690004f74da1"
+    "ownerID": "5df1e1b53ceb690004f74da1",
+    "missing": false
   },
   {
     "name": "Misty",
@@ -38,9 +41,10 @@
     "gender": "Female",
     "colour": "Blue",
     "size": 15,
-    "age": "1 years",
+    "age": "Less than 4 years",
     "lastSeenAddress": "John Street, Dublin",
-    "ownerID": "5df202c2326e91000496f5d7"
+    "ownerID": "5df202c2326e91000496f5d7",
+    "missing": false
   },
   {
     "name": "Charlie",
@@ -49,9 +53,10 @@
     "gender": "Male",
     "colour": "Brown",
     "size": 54,
-    "age": "3 years",
+    "age": "Less than 2 years",
     "lastSeenAddress": "Ormonde Street, Kilkenny",
-    "ownerID": "5df1e1b53ceb690004f74da1"
+    "ownerID": "5df1e1b53ceb690004f74da1",
+    "missing": true
   },
   {
     "name": "Spot",
@@ -60,8 +65,9 @@
     "gender": "Male",
     "colour": "Brown and white",
     "size": 78,
-    "age": "3 years",
+    "age": "Less than 1 year",
     "lastSeenAddress": "Ormonde Street, Kilkenny",
-    "ownerID": "5df202c2326e91000496f5d7"
+    "ownerID": "5df202c2326e91000496f5d7",
+    "missing": false
   }
 ]
