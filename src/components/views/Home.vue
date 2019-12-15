@@ -13,7 +13,7 @@
               <p>the login page and report your Pet</p>
             </td>
             <td>
-              <img src="../assets/missingpet.gif" alt="Mising Pet" />
+              <img src="../../assets/missingpet.gif" alt="Mising Pet" />
             </td>
           </tr>
         </table>
@@ -29,8 +29,8 @@ export default {
   name: 'Home',
   data () {
     return {
-      firstname: ' ',
-      lastname: ' '
+      firstname: '',
+      lastname: ''
     }
   },
   mounted () {

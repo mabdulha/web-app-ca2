@@ -9,7 +9,7 @@
 
 <script>
 import PetService from '@/services/petservice'
-import PetForm from '@/components/PetForm'
+import PetForm from '@/components/views/PetForm'
 
 export default {
   data () {

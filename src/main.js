@@ -7,7 +7,7 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueSweetalert2 from 'vue-sweetalert2'
-import store from './store'
+import store from './store/store'
 import {sync} from 'vuex-router-sync'
 
 Vue.use(BootstrapVue)

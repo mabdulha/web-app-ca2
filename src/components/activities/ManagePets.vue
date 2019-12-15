@@ -42,7 +42,6 @@ export default {
         },
         uniqueKey: '_id'
       },
-      uniqueKey: '_id',
       ownerID: this.$store.state.owner._id
     }
   },
