@@ -97,7 +97,6 @@ export default {
               this.message = response.data
               console.log(this.message)
               this.loadPets()
-              // Vue.nextTick(() => this.$refs.vuetable.refresh())
               this.$swal('Deleted', 'You successfully deleted this Pet ' + JSON.stringify(response.data, null, 5), 'success')
               const petindex = this.pets.findIndex(p => p._id === id)
               this.pets.splice(petindex, 1)

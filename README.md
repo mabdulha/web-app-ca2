@@ -1,12 +1,12 @@
-# Assignment 2 - Agile Software Practice.
+# Assignment 2 - Web Application Development.
 
 # Missing Paws
 
 Name: Mozeeb Abdulha
 
-## Client UI.
+Student number: 20075835
 
-...... Show screenshots of each view/page in your Vue app - include a short caption stating the purpose of each one .......
+## Client UI.
 
 ![][homepage]
 
@@ -36,19 +36,129 @@ Name: Mozeeb Abdulha
 
 >>Allows users to make an account to the app
 
+## Data model.
+
+ -- Owner Schema --
+
+~~~
+
+    firstname: {
+        type: String,
+        required: true
+    },
+    lastname: {
+        type: String,
+        required: true
+    },
+    phoneNum: {
+        type: String
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    }
+
+~~~
+
+ -- Sample output --
+
+ ~~~
+    {
+          "_id": "5dbc702ea8fdae1870ce2137",
+          "firstname": "Mozeeb",
+          "lastname": "Abdulha",
+          "phoneNum": "0123456789",
+          "email": "ma@gmail.com",
+          "__v": 0
+     }
+ ~~~
+
+ -- Pet Schema --
+
+~~~
+
+    name: {
+        type: String,
+        required: true
+    },
+    type: {
+        type: String,
+        required: true
+    },
+    species: {
+        type: String,
+        required: true
+    },
+    gender: {
+        type: String,
+        required: true
+    },
+    colour: {
+        type: String,
+        required: true
+    },
+    size: {
+        type: Number,
+        required: true
+    },
+    age: {
+        type: String,
+        required: true
+    },
+    lastSeenAddress: {
+        type: String,
+        required: true
+    },
+    views: {
+        type: Number,
+        default: 0,
+        required: true
+    },
+    missing: {
+        type: Boolean,
+        default: true
+    },
+    ownerID: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: "owners"
+    }
+
+~~~
+
+ -- Sample output --
+
+ ~~~
+    {
+          "views": 0,
+          "missing": true,
+          "_id": "5dbc705ffe4a240b8ce14622",
+          "name": "Charlie",
+          "type": "Dog",
+          "species": "Pitbull",
+          "gender": "Male",
+          "colour": "black",
+          "size": 26,
+          "age": "Less than 5 years",
+          "lastSeenAddress": "12 Walking Street, Waterford",
+          "ownerID": "5db4bbff17b11a286ca06200",
+          "__v": 0
+    }
+ ~~~
+
 ## E2E/Cypress testing.
 
-(Optional) State any non-standard features (not covered in the lectures or sample code provided) of the Cypress framework that you utilized.
+This web app is tested using cypress.
 
 ## Web API CI.
 
-(Optional) State the GitLab Pages URL of the coverage report for your Web API tests
+https://mabdulha.gitlab.io/-/missing-paws-api-cicd/-/jobs/376119164/artifacts/coverage/lcov-report/index.html
 
-https://gitlab.com/mabdulha/missing-paws-api-cicd/-/jobs/376119164/artifacts/browse/coverage/lcov-report/
 ## GitLab CI.
 
-Made video recordings of the running tests in gitlab-ci.yml
-Deployment to firebase and surge
+Made video recordings of the running tests with in gitlab-ci.yml
+Deployment to firebase
 
 
 [homepage]: ./img/homepage.png

@@ -5,6 +5,7 @@
       <v-client-table :columns="columns" :data="pets" :options="options">
         <a slot="view" slot-scope="props" class="fa fa-eye fa-2x" @click="upview(props.row._id)"></a>
         <a @click="upview(props.row._id)" slot="child_row" slot-scope="props">
+          <div class="pet-age"> Pet Age: {{ props.row.age }} </div>
           <div class="pet-last-seen"> Last Seen Address: {{ props.row.lastSeenAddress }} </div>
         </a>
       </v-client-table>
