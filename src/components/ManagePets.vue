@@ -32,13 +32,15 @@ export default {
       columns: ['name', 'type', 'species', 'gender', 'views', 'view', 'remove', 'edit'],
       options: {
         sortable: ['views'],
+        perpage: 10,
         headings: {
           _id: 'ID',
           name: 'Name',
           type: 'Type',
           species: 'Species',
           gender: 'Gender'
-        }
+        },
+        uniqueKey: '_id'
       },
       uniqueKey: '_id',
       ownerID: this.$store.state.owner._id
