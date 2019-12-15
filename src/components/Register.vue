@@ -92,7 +92,6 @@ export default {
     },
     submitOwner: function (owner) {
       console.log('submitOwner')
-      console.log('submitting in submitOwner : ' + owner)
       AuthService.register(owner)
         .then(response => {
           // JSON responses are automatically parsed.

@@ -39,17 +39,16 @@ export default {
       messagetitle: 'Login',
       email: '',
       password: '',
+      error: '',
       submitStatus: null
     }
   },
   methods: {
     submit () {
       console.log('submit')
-      console.log(process.env.VUE_APP_URL)
       // do your submit logic here
       this.submitStatus = 'PENDING'
       setTimeout(() => {
-        this.submitStatus = 'OK'
         var credentials = {
           email: this.email,
           password: this.password
@@ -59,18 +58,23 @@ export default {
       }, 500)
     },
     loginOwner: function (credentials) {
-      console.log(process.env.VUE_APP_APIURL)
       console.log('LoginOwner')
       AuthService.login(credentials)
         .then(response => {
           // JSON responses are automatically parsed.
+          this.submitStatus = 'OK'
           console.log(response)
           this.$store.dispatch('setToken', response.data.token)
           this.$store.dispatch('setOwner', response.data.owner)
-          // this.$router.push('/')
+          this.$router.push('/')
         })
         .catch(err => {
           console.log(err)
+          this.$swal({
+            title: `${err.response.data.message}`,
+            type: 'error',
+            showLoaderOnConfirm: true
+          })
         })
     }
   }
